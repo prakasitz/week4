@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    
+    <context-param>
+        <param-name>email</param-name>
+        <param-value>admin@email.com</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>phone</param-name>
+        <param-value>085-487-1896</param-value>
+    </context-param>
+    
+    <!-- error -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errors/error_404.html</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.ArithmeticException</exception-type>
+        <location>/errors/error_arithmetic.html</location>
+    </error-page>   
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/errors/error_servletException.html</location>
+    </error-page>   
+    
+
+    <welcome-file-list>
+        <welcome-file>Servlet3</welcome-file>
+        <welcome-file>welcome.html</welcome-file>
+    </welcome-file-list>
+ 
+    <!--myServlet-->
+    <servlet>
+        <servlet-name>myServlet</servlet-name>
+        <servlet-class>com.praka.servlet.lab4.myServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>myServlet</servlet-name>
+        <url-pattern>/myServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--CheckTime-->
+    <servlet>
+        <servlet-name>CheckTime</servlet-name>
+        <servlet-class>com.praka.servlet.assign4.CheckTime</servlet-class>
+        <init-param>
+            <param-name>openTime</param-name>
+            <param-value>9:00:00</param-value>
+        </init-param>
+        <init-param>
+            <param-name>closeTime</param-name>
+            <param-value>17:00:00</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckTime</servlet-name>
+        <url-pattern>/check</url-pattern>
+        <init-param>
+            <param-name>openTime</param-name>
+            <param-value>9:00:00</param-value>
+        </init-param>
+        <init-param>
+            <param-name>closeTime</param-name>
+            <param-value>17:00:00</param-value>
+        </init-param>
+    </servlet-mapping>
+    
+    <!--Servlet2-->
+    <servlet>
+        <servlet-name>Servlet2</servlet-name>
+        <servlet-class>my.servlet.Servlet2</servlet-class>
+        <init-param>
+            <param-name>openTime</param-name>
+            <param-value>10:00:00</param-value>
+        </init-param>
+        <init-param>
+            <param-name>closeTime</param-name>
+            <param-value>19:00:00</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet2</servlet-name>
+        <url-pattern>/Servlet2</url-pattern>
+    </servlet-mapping>
+    
+    <!--Servlet3-->
+    <servlet>
+        <servlet-name>Servlet3</servlet-name>
+        <servlet-class>my.servlet.Servlet3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet3</servlet-name>
+        <url-pattern>/Servlet3</url-pattern>
+    </servlet-mapping>
+    
+    <!--Servlet4-->
+    <servlet>
+        <servlet-name>Servlet4</servlet-name>
+        <servlet-class>my.servlet.Servlet4</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet4</servlet-name>
+        <url-pattern>/Servlet4</url-pattern>
+    </servlet-mapping>
+    
+    <!--Servlet5-->
+    <servlet>
+        <servlet-name>Servlet5</servlet-name>
+        <servlet-class>my.servlet.Servlet5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet5</servlet-name>
+        <url-pattern>/Servlet5</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
